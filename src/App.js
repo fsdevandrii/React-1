@@ -5,6 +5,8 @@ import Photo from "./component/photo";
 import Price from "./component/price";
 import RoomList from "./component/room-list";
 import Description from "./component/description";
+import Property from "./component/prop-details";
+import Amenities from "./component/amenities";
 
 function App() {
   const data = {
@@ -176,7 +178,28 @@ function App() {
 
       <RoomList list={data.roomTypes} />
       <Description title="Опис" children={data.description} />
+      <Property
+        title="Деталі властивості:"
+        guests={data.property_details.guests}
+        bedrooms={data.property_details.bedrooms}
+        beds={data.property_details.beds}
+        baths={data.property_details.baths}
+      />
       <Description title="Про сусідів" children={data.neighborhood_info} />
+
+      <Amenities
+        title="Зручності"
+        hasPool={data.amenities.hasPool}
+        hasGym={data.amenities.hasGym}
+        hasFreeBreakfast={data.amenities.hasFreeBreakfast}
+        hasFreeWiFi={data.amenities.hasFreeWiFi}
+        hasParking={data.amenities.hasParking}
+        hasPetsAllowed={data.amenities.hasPetsAllowed}
+        hasAirportShuttle={data.amenities.hasAirportShuttle}
+        hasConciergeService={data.amenities.hasConciergeService}
+        hasRoomService={data.amenities.hasRoomService}
+        hasChildFriendly={data.amenities.hasChildFriendly}
+      />
     </Page>
   );
 }
