@@ -7,6 +7,11 @@ import RoomList from "./component/room-list";
 import Description from "./component/description";
 import Property from "./component/prop-details";
 import Amenities from "./component/amenities";
+import ContactInfo from "./component/contactinfo";
+import Additional from "./component/additional";
+import GuestReviews from "./component/guestreviews";
+
+import NearbyAttractions from "./component/nearbyattractions";
 
 function App() {
   const data = {
@@ -72,7 +77,7 @@ function App() {
     neighborhood_info: "Район чарівний, веселий, безпечний і милий...",
 
     amenities: {
-      hasPool: true,
+      hasPool: false,
       hasGym: false,
       hasFreeBreakfast: true,
       hasFreeWiFi: true,
@@ -80,8 +85,8 @@ function App() {
       hasPetsAllowed: false,
       hasAirportShuttle: true,
       hasConciergeService: true,
-      hasRoomService: false,
-      hasChildFriendly: true,
+      hasRoomService: true,
+      hasChildFriendly: false,
     },
 
     contact_info: {
@@ -199,6 +204,31 @@ function App() {
         hasConciergeService={data.amenities.hasConciergeService}
         hasRoomService={data.amenities.hasRoomService}
         hasChildFriendly={data.amenities.hasChildFriendly}
+      />
+
+      <ContactInfo
+        name={data.contact_info.name}
+        image={data.contact_info.image}
+        response_rate={data.contact_info.response_rate}
+        response_time={data.contact_info.response_time}
+        info={data.contact_info.info}
+        phone={data.contact_info.phone}
+      />
+
+      <Additional
+        title="Додаткові властивості"
+        house={data.additional_properties.house_rules}
+        cancellation={data.additional_properties.cancellation_policy}
+        local={data.additional_properties.local_transportation}
+        host={data.additional_properties.host_languages}
+        special={data.additional_properties.special_offers}
+      />
+
+      <GuestReviews title="Відгуки клієнтів" reviews={data.guestReviews} />
+
+      <NearbyAttractions
+        title="Пам'ятки поблизу"
+        attractions={data.nearbyAttractions}
       />
     </Page>
   );

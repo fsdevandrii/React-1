@@ -1,0 +1,50 @@
+.contactinfo {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.contact__img {
+  overflow: hidden;
+  border-radius: 50%;
+}
+.img {
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.contactinfo__user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contactinfo__user-block {
+  display: flex;
+  gap: 16px;
+}
+
+.contactinfo__info {
+  padding: 20px 0;
+
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 125%;
+}
+
+.contactinfo__user-value {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.contactinfo__user-value:not(:last-child)::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 4px;
+  border-radius: 4px;
+  background-color: #000;
+}

@@ -1,0 +1,13 @@
+.attrack__block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.attrack__list {
+  padding: 20px 0;
+}
+
+.attractions__link {
+  color: black;
+}

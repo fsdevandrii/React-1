@@ -4,3 +4,7 @@
   object-fit: cover;
   border-radius: 20px;
 }
+
+.photo__sm {
+  border-radius: 50%;
+}
